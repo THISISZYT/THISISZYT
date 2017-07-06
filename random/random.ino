@@ -16,7 +16,7 @@ randomSeed(analogRead(0));
 }
 
 void loop() {
-count = random(5,8);
+count = random(4,7);
   Serial.println(count);
   digitalWrite(count,HIGH);
   delay(500);
