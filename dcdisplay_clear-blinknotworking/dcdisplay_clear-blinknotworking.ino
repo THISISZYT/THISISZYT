@@ -17,9 +17,5 @@ lcd.print("gogogogo");
 
 
 
- 
-delay (2000);
-
-
 
 }
