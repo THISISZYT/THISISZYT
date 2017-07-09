@@ -5,8 +5,8 @@ int count=15;
 void setup() {
 
   lcd.begin(16, 2);
-
-  lcd.print("hello, world!");
+  lcd.setCursor(2, 0);
+  lcd.print("Whac-A-Mole");
 }
 
 void loop() {
