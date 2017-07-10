@@ -19,7 +19,7 @@ lcd.createChar(2,heart);
 lcd.createChar(3,heart);
 lcd.setCursor(2, 0);// right in der Mittle
     lcd.print("Whac-A-Mole!");
-    delay(3000);
+    delay(3000);//use as run-up time
     lcd.clear();
   
 }
@@ -41,7 +41,7 @@ void loop() {
     lcd.cursor();
     lcd.blink();
     
-    delay(2000);
+    delay(2000);//to show "blink()" right
     
 
 
