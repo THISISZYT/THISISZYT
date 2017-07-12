@@ -36,34 +36,30 @@ lcd.print("Whac-A-Mole");
 void loop() 
 {
      if (millis() < minutes * 1) {
-    int A = random(2,5);
-    digitalWrite(A,HIGH);
-   
-    unsigned long A = millis();
-    while( millis()-A < 800)
-    { 
-       buttonState= digitalRead(A+4);
-       if(buttonState != prebuttonState)
-      {   if (buttonState == LOW)
-         {
-             count=count+1;    
-              lcd.setCursor(6, 1);
-             lcd.print(count);
-          }
-      } 
-       prebuttonState= buttonState;   
-    }       
+           int A = random(2,5);
+           digitalWrite(A,HIGH);
+           unsigned long A = millis();
+             while( millis()-A < 800){ 
+                   buttonState= digitalRead(A+4);
+                   
+                        if(buttonState != prebuttonState){  
+                           
+                          if (buttonState == LOW){//Taste wird gedrückt und wieder losgelassen
+         
+                                count=count+1;    
+                                lcd.setCursor(6, 1);
+                                lcd.print(count);}
+    
 
- digitalWrite(A,LOW);
- delay(200);     
+                    prebuttonState= buttonState; }      
 
- }
+           digitalWrite(A,LOW);
+           delay(200);     }
 
- 
-else {    
-     lcd.setCursor(0, 0);
-     lcd.print("Your Score is:");
-     lcd.setCursor(6, 1);
-    lcd.print(count);
+     else {    
+         lcd.setCursor(0, 0);
+         lcd.print("Your Score is:");
+         lcd.setCursor(6, 1);
+         lcd.print(count);
  }
 }
