@@ -42,7 +42,7 @@ void loop() {
     lcd.blink();
     
     delay(2000);//to show "blink()" right
-    
+    // diese Programm wird benutzt, um alle Funktionen von lcdisplay zu testen
 
 
 }
