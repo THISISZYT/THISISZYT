@@ -11,23 +11,30 @@ int LED1 = 2;
 int Button1 = 6;
 unsigned long minutes = 60000;
 
+int count = 0;
+int buttonState = 0;
+int prebuttonState = 0;
+
 void setup() {
   Serial.begin(9600);
   lcd.begin(16, 2);
 
   RUNTEST
 
-  pinMode(LED1, INPUT);//einzelne LED testing
+  pinMode(LED1, INPUT);
   
-  pinMode(Button1, OUTPUT);//einzelne Button testing
+  pinMode(Button1, OUTPUT);
   
   
 
 void loop()
 {
+   digitalWrite(LED1,HIGH);
+    LED();          //einzelne LED testing
     
   if (millis() < minutes * 1) {
-    
+     
+       button1();         //einzelne Button testing
         if (buttonState != prebuttonState)
       {
         if (buttonState == LOW)
@@ -39,13 +46,13 @@ void loop()
       prebuttonState = buttonState;
     
 
-    digitalWrite(A, LOW);
+  
     delay(200);
 
   }
 
 
   else {
-    zustand(count);// test counting
+    counting(count);// test counting
   }
 }
