@@ -38,8 +38,8 @@ void loop()
      if (millis() < minutes * 1) {
            int A = random(2,5);
            digitalWrite(A,HIGH);
-           unsigned long A = millis();
-             while( millis()-A < 800){ 
+           unsigned long Time = millis();
+             while( millis()-Time < 800){ 
                    buttonState= digitalRead(A+4);
                    
                         if(buttonState != prebuttonState){  
